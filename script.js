@@ -21,4 +21,17 @@ const numPlantAfterNumWeek = initialPlants * Math.pow(2 , numWeek);
 if (numPlantAfterNumWeek > maxCapacity) {
     numPlantAfterNumWeek = maxCapacity;
 }
-console.console.log(numPlantAfterNumWeek);
+console.log(numPlantAfterNumWeek);
+
+/**
+ * Week 1: With 40 plants, the recommendation is to Plant more 
+ *  as the plant count is below 50% of the maximum capacity of the garden.
+ */
+//Decision for the first week
+if(numPlantAfterNumWeek * spaceRequire > area*0.8){
+    console.log("the plan exceed the garden capacity")
+}else if(numPlantAfterNumWeek*spaceRequire > area *0.5){
+    console.log("the plants are reaching the capacity")
+}else{
+    console.log("keep planting as there is a lot of space available")
+}
