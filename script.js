@@ -46,3 +46,15 @@ if (numPlantAfterNumWeek * spaceRequire > area * 0.8) {
 } else {
     console.log('Plant more as there is ample space available.');
 }
+
+//Part2
+const plantsForPart2 = 100;
+const numWeekForPart2 = 10;
+const numPlantAfterNum10Weeks = plantsForPart2 * Math.pow(2, numWeekForPart2);
+const requiredSpace = numPlantAfterNum10Weeks* spaceRequire;
+// Calculating the radius for the expanded garden
+const expandedRadius = Math.sqrt(requiredSpace / PI);
+console.log("Additional space require ", requiredSpace, " square meter");
+//this round up after 2 decimal
+console.log("Additional space require ", Math.round(expandedRadius , 2), " meter");
+console.log("Additional space require ", expandedRadius, " meter");
