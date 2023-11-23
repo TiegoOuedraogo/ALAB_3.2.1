@@ -1,37 +1,48 @@
-//radius of 5 meters.
-/**
- * The formula for calculating the area of a circle is PI multiplied by the radius, squared: const 
- * const PI = 3.1415; 
- * const area = PI * radius * radius; 
- * 
- * Each plant requires a minimum space of 0.8 square meters.
- * The area is starting with 20 plants.
- * The plants double in number every week.
- */
 const radius = 5;
 const PI = 3.1415;
 const area = PI * radius * radius;
-let spaceRequire =0.8;//this is in square meter
-let initialPlants =20;
-let maxCapacity = area/spaceRequire; 
+let spaceRequire = 0.8; // This is in square meters
+let initialPlants = 20;
+let maxCapacity = area / spaceRequire; // Maximum capacity of the garden based on plant space requirements
 
-let numWeek=1;
-//20 times number of week to the power of 2
-const numPlantAfterNumWeek = initialPlants * Math.pow(2 , numWeek);
-if (numPlantAfterNumWeek > maxCapacity) {
-    numPlantAfterNumWeek = maxCapacity;
-}
+let numWeek = 1; // Change this to simulate different weeks
+let numPlantAfterNumWeek = initialPlants * Math.pow(2, numWeek);
 console.log(numPlantAfterNumWeek);
 
-/**
- * Week 1: With 40 plants, the recommendation is to Plant more 
- *  as the plant count is below 50% of the maximum capacity of the garden.
- */
-//Decision for the first week
-if(numPlantAfterNumWeek * spaceRequire > area*0.8){
-    console.log("the plan exceed the garden capacity")
-}else if(numPlantAfterNumWeek*spaceRequire > area *0.5){
-    console.log("the plants are reaching the capacity")
-}else{
-    console.log("keep planting as there is a lot of space available")
+// Decision logic for 1 week
+    // Check if the space required by the current number of plants is greater than 80% of the garden's area
+if (numPlantAfterNumWeek * spaceRequire > area * 0.8) {
+    // If so, the garden is at risk of being overpopulated and the plants need to be pruned
+    console.log('Prune the plants to avoid exceeding garden capacity.');
+    // If the space required is between 50% and 80%, monitor the plants as they are nearing capacity
+} else if (numPlantAfterNumWeek * spaceRequire > area * 0.5) {
+    console.log('Monitor the plants closely as they are reaching capacity.');
+} else {
+    // If the space required is less than 50%, there is room to plant more
+    console.log('Plant more as there is ample space available.');
+}
+// for the week 2
+numWeek = 2;
+numPlantAfterNumWeek = initialPlants * Math.pow(2, numWeek);
+console.log(numPlantAfterNumWeek);
+
+if (numPlantAfterNumWeek * spaceRequire > area * 0.8) {
+    console.log('Prune the plants to avoid exceeding garden capacity.');
+} else if (numPlantAfterNumWeek * spaceRequire > area * 0.5) {
+    console.log('Monitor the plants closely as they are reaching capacity.');
+} else {
+    console.log('Plant more as there is ample space available.');
+}
+
+//for the week 3
+numWeek = 3;
+numPlantAfterNumWeek = initialPlants * Math.pow(2, numWeek);
+console.log(numPlantAfterNumWeek);
+
+if (numPlantAfterNumWeek * spaceRequire > area * 0.8) {
+    console.log('Prune the plants to avoid exceeding garden capacity.');
+} else if (numPlantAfterNumWeek * spaceRequire > area * 0.5) {
+    console.log('Monitor the plants closely as they are reaching capacity.');
+} else {
+    console.log('Plant more as there is ample space available.');
 }
